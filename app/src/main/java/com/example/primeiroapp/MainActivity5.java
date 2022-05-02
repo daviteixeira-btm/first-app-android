@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,6 +14,15 @@ import android.widget.TextView;
 public class MainActivity5 extends AppCompatActivity {
 
     Button bt_ir5_4;
+    private static final String[] ESTADOS = new String[]{
+            "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará",
+            "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso",
+            "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba",
+            "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro",
+            "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia",
+            "Roraima", "Santa Catarina", "São Paulo", "Sergipe",
+            "Tocantins", "Distrito Federal"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +50,12 @@ public class MainActivity5 extends AppCompatActivity {
             }
         });
 
+        String[] estados = getResources().getStringArray(R.array.estados);
 
+        AutoCompleteTextView editText = findViewById(R.id.actv);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, estados);
+        editText.setAdapter(adapter);
     }
-
 
 }

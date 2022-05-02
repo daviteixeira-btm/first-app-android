@@ -45,6 +45,24 @@
         android:textAlignment="center"
         android:textSize="40sp" />
 
+    <AutoCompleteTextView
+        android:id="@+id/actv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Selecione um estado"
+        android:completionThreshold="1"
+        android:dropDownAnchor="@id/text_view_estados"
+        android:completionHint="Selecione um estado" />
+
+    <TextView
+        android:id="@+id/text_view_estados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estados"
+        android:textSize="20sp"
+        android:paddingBottom="16dp"/>
+
+
     <Button
         android:id="@+id/bt_ir5_4"
         android:layout_width="match_parent"
